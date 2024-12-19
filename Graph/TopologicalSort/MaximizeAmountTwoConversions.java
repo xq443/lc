@@ -18,10 +18,10 @@ public class MaximizeAmountTwoConversions {
     day1.put(initialCurrency, 1.0);
     performConversion(map1, day1);
 
+    // conversion for day2
     Map<String, Double> day2 = new HashMap<>(day1);
     performConversion(map2, day2);
     return day2.getOrDefault(initialCurrency, 1.0);
-
   }
 
   public Map<String, Map<String, Double>>  buildGraph(List<List<String>> pairs, double[] rates) {
