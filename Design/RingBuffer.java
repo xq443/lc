@@ -85,5 +85,6 @@ public class RingBuffer {
     System.out.println(myCircularQueue.deQueue());  // return True
     System.out.println(myCircularQueue.enQueue(4)); // return True
     System.out.println(myCircularQueue.Rear());     // return 4
+    System.out.println(myCircularQueue.Front());     // return 2
   }
 }
