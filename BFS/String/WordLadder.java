@@ -1,5 +1,6 @@
 package String;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -47,7 +48,7 @@ public class WordLadder {
   public static void main(String[] args) {
     WordLadder w = new WordLadder();
     String beginWord = "hit", endWord = "cog";
-    List<String> wordList = List.of(new String[]{"hot", "dot", "dog", "lot", "log", "cog"});
+    List<String> wordList = new ArrayList<>(List.of("hot", "dot", "dog", "lot", "log", "cog"));
     System.out.println(w.ladderLength(beginWord, endWord, wordList));
   }
 }
