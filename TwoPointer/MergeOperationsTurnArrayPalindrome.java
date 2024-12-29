@@ -17,7 +17,7 @@ public class MergeOperationsTurnArrayPalindrome {
         left++;
         right--;
         leftSum += nums[left];
-        leftSum -= nums[right];
+        rightSum -= nums[right];
       }
     }
     return ret;
