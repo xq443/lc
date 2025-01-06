@@ -13,6 +13,7 @@ public class TextJustification {
         else cnt += words[j].length();
         j++;
       }
+
       j--;
       if(cnt > maxWidth) {
         cnt -= words[j].length() + 1;
