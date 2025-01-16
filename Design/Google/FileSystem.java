@@ -9,11 +9,10 @@ import java.util.Map;
 public class FileSystem {
 
   static class TrieNode {
-
+    Map<String, TrieNode> map; // key: path; value: trienode (file or dir)
     String name;
     boolean isFile;
     StringBuilder fileContent;
-    Map<String, TrieNode> map;
 
     public TrieNode(String name) {
       this.name = name;
