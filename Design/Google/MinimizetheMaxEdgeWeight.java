@@ -47,7 +47,7 @@ public class MinimizetheMaxEdgeWeight {
         }
       }
     }
-    return n == 0 ? ret : -1;
+    return n == 0 ? ret : -1; // check if it's graph
   }
 
   public static void main(String[] args) {
