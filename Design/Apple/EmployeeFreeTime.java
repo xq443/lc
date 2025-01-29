@@ -31,6 +31,7 @@ public class EmployeeFreeTime {
 
     //flattern.sort((a, b) -> (a.start - b.start));
     flattern.sort(Comparator.comparingInt(a -> a.start));
+
     int end = flattern.get(0).end;
     for(Interval i : flattern) {
       if(end < i.start) {
