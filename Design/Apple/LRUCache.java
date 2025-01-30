@@ -74,6 +74,4 @@ public class LRUCache {
     removeNode(tail);
     return tail;
   }
-
-
 }
