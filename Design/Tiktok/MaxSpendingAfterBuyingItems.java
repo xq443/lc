@@ -1,6 +1,7 @@
 package Tiktok;
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 public class MaxSpendingAfterBuyingItems {
   public long maxSpending(int[][] values) {
@@ -25,6 +26,25 @@ public class MaxSpendingAfterBuyingItems {
     return ret;
   }
 
+  public long maxSpending_heap(int[][] values) {
+    long ret = 0;
+    int n = values.length;
+    int m = values[0].length;
+    PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> a - b);
+    for(int i = 0; i < n; i++) {
+      for(int j = 0; j < m; j++) {
+        pq.offer(values[i][j]);
+      }
+    }
+
+    int day = 1;
+    while(!pq.isEmpty()) {
+      ret += (long) day * pq.poll();
+      day++;
+    }
+    return ret;
+  }
+
   public static void main(String[] args) {
     MaxSpendingAfterBuyingItems m = new MaxSpendingAfterBuyingItems();
     int[][] values = {
@@ -38,6 +58,6 @@ public class MaxSpendingAfterBuyingItems {
         {6, 4, 1},
         {9, 7, 3}
     };
-    System.out.println(m.maxSpending(values2));
+    System.out.println(m.maxSpending_heap(values2));
   }
 }
