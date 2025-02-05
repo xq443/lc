@@ -1,4 +1,4 @@
-package Tiktok;
+package Tiktok.BinarySearch;
 
 public class FindMinInRotatedSortedArray {
   public int findMin(int[] nums) {

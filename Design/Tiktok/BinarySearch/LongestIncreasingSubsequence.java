@@ -1,4 +1,4 @@
-package Tiktok;
+package Tiktok.BinarySearch;
 
 import java.util.ArrayList;
 import java.util.List;

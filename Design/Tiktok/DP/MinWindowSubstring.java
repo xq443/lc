@@ -1,4 +1,4 @@
-package Tiktok;
+package Tiktok.DP;
 
 public class MinWindowSubstring {
   public String minWindow(String s, String t) {
