@@ -1,4 +1,4 @@
-package Snowflake;
+package Snowflake.graph;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

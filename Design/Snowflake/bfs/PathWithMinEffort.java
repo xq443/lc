@@ -1,4 +1,4 @@
-package Snowflake;
+package Snowflake.bfs;
 
 import java.util.PriorityQueue;
 
