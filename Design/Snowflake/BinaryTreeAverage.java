@@ -65,4 +65,5 @@ public class BinaryTreeAverage {
     System.out.println(b.checkSubtreeAverage(root));  // true or false
   }
 }
-
+// TC: O(N)
+// SC: O(LogN) balanced tree best case / O(N) -> skewed tree worst case

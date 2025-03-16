@@ -29,6 +29,8 @@ class KVStore {
   }
 
   private final Map<String, List<Entry>> store = new ConcurrentHashMap<>();
+  // ensure each thread maintains its own transaction state independently.
+  // This prevents conflicts between multiple threads accessing the key-value store simultaneously.
   private final ThreadLocal<Transaction> threadTransaction = new ThreadLocal<>();
 
   public synchronized void put(String key, String value) {
