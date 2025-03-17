@@ -1,6 +1,18 @@
-package Snowflake;
+package Snowflake.LeafSimiliar;
 
 public class LeafSimilar {
+  static class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    public TreeNode(int val) {
+      this.val = val;
+      this.left = null;
+      this.right = null;
+    }
+  }
+
   public boolean leafSimilar(TreeNode root1, TreeNode root2) {
     return dfs(root1, root2);
   }
