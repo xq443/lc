@@ -1,4 +1,4 @@
-package Snowflake;
+package Snowflake.RolePriviledge;
 
 import java.util.*;
 
