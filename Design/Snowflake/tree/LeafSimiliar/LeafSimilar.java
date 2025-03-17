@@ -1,4 +1,4 @@
-package Snowflake.LeafSimiliar;
+package Snowflake.tree.LeafSimiliar;
 
 public class LeafSimilar {
   static class TreeNode {

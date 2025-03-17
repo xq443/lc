@@ -1,4 +1,4 @@
-package Snowflake.RolePriviledge;
+package Snowflake.graph.RolePriviledge;
 
 import java.util.*;
 

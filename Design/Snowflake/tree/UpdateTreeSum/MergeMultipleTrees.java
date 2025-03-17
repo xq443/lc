@@ -1,4 +1,4 @@
-package Snowflake.UpdateTreeSum;
+package Snowflake.tree.UpdateTreeSum;
 
 import java.util.List;
 

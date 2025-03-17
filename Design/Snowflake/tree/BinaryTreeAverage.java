@@ -1,4 +1,5 @@
-package Snowflake;
+package Snowflake.tree;
+
 
 public class BinaryTreeAverage {
   // 返回子树的总和和节点个数，如果该节点的值不等于子树的平均值则返回 false
@@ -55,7 +56,7 @@ public class BinaryTreeAverage {
     // 构造测试二叉树
     TreeNode root = new TreeNode(5);
     root.left = new TreeNode(3);
-    root.right = new Snowflake.TreeNode(7);
+    root.right = new TreeNode(7);
     root.left.left = new TreeNode(2);
     root.left.right = new TreeNode(4);
     root.right.left = new TreeNode(6);

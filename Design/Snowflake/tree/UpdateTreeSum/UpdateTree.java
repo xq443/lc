@@ -1,4 +1,4 @@
-package Snowflake.UpdateTreeSum;
+package Snowflake.tree.UpdateTreeSum;
 
 public class UpdateTree {
   public static class TreeNode {
