@@ -1,6 +1,5 @@
 package Snowflake.tree.SerializeBinaryNaryTree;
 
-import Snowflake.tree.TreeNode;
 import java.util.LinkedList;
 import java.util.Queue;
 

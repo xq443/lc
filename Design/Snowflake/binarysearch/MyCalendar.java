@@ -1,4 +1,4 @@
-package Snowflake;
+package Snowflake.binarysearch;
 
 import java.util.ArrayList;
 import java.util.List;

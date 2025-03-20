@@ -1,7 +1,5 @@
 package Snowflake.tree.SerializeBinaryNaryTree;
 
-import Snowflake.tree.TreeNode;
-
 public class DiametryBinaryTree {
     int ret;
     public int diameterOfBinaryTree(TreeNode root) {
