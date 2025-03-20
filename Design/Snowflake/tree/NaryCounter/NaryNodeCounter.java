@@ -1,20 +1,22 @@
-package Snowflake.tree;
+package Snowflake.tree.NaryCounter;
 
+import Snowflake.tree.NaryCounter.Node.Msg;
 import java.util.*;
-
-// Message class representing messages exchanged between nodes
-class Msg {
-  String type; // Message type: "REQ", "REP", "TOT"
-  int value;  // Value: REP - subtree node count, TOT - total tree node count
-
-  Msg(String type, int value) {
-    this.type = type;
-    this.value = value;
-  }
-}
 
 // Node class representing a node in the distributed system
 class Node {
+
+  // Message class representing messages exchanged between nodes
+  static class Msg {
+    String type; // Message type: "REQ", "REP", "TOT"
+    int value;  // Value: REP - subtree node count, TOT - total tree node count
+
+    Msg(String type, int value) {
+      this.type = type;
+      this.value = value;
+    }
+  }
+
   int id;
   List<Node> children = new ArrayList<>();
   Node parent = null;
@@ -95,9 +97,7 @@ class Node {
       send(child, new Msg("TOT", totalNodes));
     }
   }
-}
 
-public class NaryNodeCounter {
   public static void main(String[] args) {
     Node n1 = new Node(1);
     Node n2 = new Node(2);

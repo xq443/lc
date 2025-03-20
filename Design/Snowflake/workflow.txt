@@ -1,0 +1,21 @@
+### Hit Processing (Write Path):
+Machine sends hit(timestamp) → Load Balancer.
+Load Balancer forwards request to a sharded instance of the Hit Processing Service.
+The service increments the count in the correct Redis shard.
+The TTL (300s) ensures only the last 5 minutes are kept.
+
+### Fetching Hits (Read Path):
+    ## MapReduce-Style Fan-Out
+        # What is Fan-Out?
+          Fan-out refers to a system distributing tasks from one component (e.g., a master node) to multiple workers in parallel. This helps handle large workloads efficiently.
+
+        # How Does MapReduce-Style Fan-Out Work?
+          MapReduce, introduced by Google, follows a fan-out pattern to distribute work across multiple machines:
+
+        # Map Phase (Fan-Out) → A master node splits data into smaller tasks and distributes them across many worker nodes.
+        # Shuffle Phase → Workers send intermediate results to the appropriate reducers.
+        # Reduce Phase (Fan-In) → Another set of worker nodes aggregates the intermediate results into the final output.
+Machine requests getHits(timestamp).
+Aggregator Service queries all Redis shards.
+Redis shards return hit counts for the last 300 timestamps.
+Aggregator Service sums up counts and returns the final result.
