@@ -80,6 +80,16 @@ public class ThermostatImpl implements Thermostat {
         return right; // If not found, return the last index before the timestamp
     }
 
+    // Remove temperature entry based on timestamp
+    public boolean removeTemperature(LocalDateTime timestamp) {
+        int idx = binarySearch(timestamp);
+        if (idx != -1 && entries.get(idx).timestamp.equals(timestamp)) {
+            entries.remove(idx);
+            return true; // Successfully removed
+        }
+        return false; // Timestamp not found
+    }
+
     public static void main(String[] args) {
         try {
             ThermostatImpl thermostatDB = new ThermostatImpl();
@@ -103,10 +113,14 @@ public class ThermostatImpl implements Thermostat {
                 System.out.println(temp + "°C");
             }
 
-            // Attempt to retrieve a temperature for a non-existent timestamp
-            LocalDateTime nonExistentTimestamp = LocalDateTime.of(2025, 3, 6, 18, 0, 0);
+            // Attempt to remove a temperature entry
+            LocalDateTime timestampToRemove = LocalDateTime.of(2025, 3, 6, 12, 0, 0);
+            boolean removed = thermostatDB.removeTemperature(timestampToRemove);
+            System.out.println("Temperature at " + timestampToRemove + " removed: " + removed);
+
+            // Attempt to retrieve the removed temperature
             try {
-                thermostatDB.getTemperature(nonExistentTimestamp);
+                thermostatDB.getTemperature(timestampToRemove);
             } catch (IllegalAccessException e) {
                 System.out.println("Error: " + e.getMessage());
             }
@@ -136,12 +150,12 @@ public class ThermostatImpl implements Thermostat {
     }
 
     // Adding an entry:
-        // Time Complexity: O(N log N) (due to sorting)
-        //Space Complexity: O(N) (for the list of entries)
+    // Time Complexity: O(N log N) (due to sorting)
+    // Space Complexity: O(N) (for the list of entries)
     // Finding a specific timestamp:
-        // Time Complexity: O(log N)
-        // Space Complexity: O(1)
-    //In-range search:
-        // Time Complexity: O(log N + M) (binary search for the range + iterating through the range of elements)
-        // Space Complexity: O(M) (for storing the range results)
+    // Time Complexity: O(log N)
+    // Space Complexity: O(1)
+    // In-range search:
+    // Time Complexity: O(log N + M) (binary search for the range + iterating through the range of elements)
+    // Space Complexity: O(M) (for storing the range results)
 }
