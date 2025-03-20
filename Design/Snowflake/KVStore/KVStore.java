@@ -1,4 +1,4 @@
-package Snowflake;
+package Snowflake.KVStore;
 
 import java.util.*;
 import java.util.concurrent.*;

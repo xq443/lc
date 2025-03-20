@@ -1,4 +1,4 @@
-package Snowflake;
+package Snowflake.tree.NaryCounter;
 
 import java.util.HashSet;
 import java.util.Set;

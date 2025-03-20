@@ -1,4 +1,4 @@
-package Snowflake;
+package Snowflake.binarysearch;
 
 public class CapacityToShipPackagesWithinDDays {
     public int shipWithinDays(int[] weights, int days) {

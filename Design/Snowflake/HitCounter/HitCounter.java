@@ -1,4 +1,4 @@
-package Snowflake;
+package Snowflake.HitCounter;
 
 public class HitCounter {
 

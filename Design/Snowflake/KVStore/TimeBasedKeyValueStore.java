@@ -1,4 +1,4 @@
-package Snowflake;
+package Snowflake.KVStore;
 
 import java.util.ArrayList;
 import java.util.HashMap;

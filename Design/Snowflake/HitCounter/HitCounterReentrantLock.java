@@ -1,4 +1,4 @@
-package Snowflake;
+package Snowflake.HitCounter;
 
 import java.util.concurrent.locks.ReentrantLock;
 
