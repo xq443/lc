@@ -2,6 +2,14 @@ package Snowflake.tree;
 
 
 public class BinaryTreeAverage {
+  static class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode(int x) {
+      val = x;
+    }
+  }
   // 返回子树的总和和节点个数，如果该节点的值不等于子树的平均值则返回 false
   public boolean checkSubtreeAverage(TreeNode root) {
     return checkSubtreeAverageHelper(root) != null;

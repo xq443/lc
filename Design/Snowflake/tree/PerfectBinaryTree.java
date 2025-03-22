@@ -11,7 +11,7 @@ class TreeNode {
 public class PerfectBinaryTree {
 
   // Check if a tree is perfect
-  public static boolean isPerfect(TreeNode root) {
+  public boolean isPerfect(TreeNode root) {
     if (root == null) return true;
 
     Queue<TreeNode> queue = new LinkedList<>();
@@ -34,7 +34,7 @@ public class PerfectBinaryTree {
   }
 
   // Transform a binary tree into a perfect tree with minimum operations
-  public static int transformToPerfect(TreeNode root) {
+  public int transformToPerfect(TreeNode root) {
     if (root == null) return 0;
 
     Queue<TreeNode> queue = new LinkedList<>();
@@ -62,6 +62,7 @@ public class PerfectBinaryTree {
   }
 
   public static void main(String[] args) {
+    PerfectBinaryTree p = new PerfectBinaryTree();
     // Test case: Tree that is missing nodes in multiple levels
     TreeNode root = new TreeNode(1);
     root.left = new TreeNode(2);
@@ -70,7 +71,7 @@ public class PerfectBinaryTree {
     root.left.right = new TreeNode(5);
     root.right.left = new TreeNode(6);
 
-    System.out.println("Is perfect tree? " + isPerfect(root)); // false
-    System.out.println("Minimum operations to make perfect: " + transformToPerfect(root)); // Expected: 1
+    System.out.println("Is perfect tree? " + p.isPerfect(root)); // false
+    System.out.println("Minimum operations to make perfect: " + p.transformToPerfect(root)); // Expected: 1
   }
 }
