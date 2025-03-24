@@ -19,12 +19,12 @@ public class ThermostatImplbinarysearch implements Thermostatbinarysearch {
 
     @Override
     public double getTemperature(LocalDateTime timestamp) throws IllegalAccessException {
-        int idx = binarySearch(timestamp);
-        if (idx != -1) {
-            return entries.get(idx).temperature;
-        } else {
-            throw new IllegalAccessException("Temperature data is not found for the given timestamp");
+        for (Entry entry : entries) {
+            if (entry.timestamp.equals(timestamp)) {
+                return entry.temperature;
+            }
         }
+        throw new IllegalAccessException("Temperature data is not found for the given timestamp");
     }
 
     @Override
