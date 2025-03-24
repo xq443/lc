@@ -99,3 +99,6 @@ public class RolePrivilegesDFS {
 }
 // TC : O(V + E)
 // SC : O(V + E) + O(V)
+
+// TC: O(N * M + N * K)
+// SC: O(N * M + N * K)
