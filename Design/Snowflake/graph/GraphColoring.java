@@ -90,7 +90,7 @@ class GraphColoring {
         }
     }
 
-    // TC: O(E + N) + O(numColor^N * N)
+    // TC: O(E + N) + O(k^N)
     // SC: O(E + N)
     // N: # of nodes E: # of edges
 }
