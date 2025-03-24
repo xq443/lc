@@ -1,3 +1,5 @@
+package Snowflake;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +21,7 @@ public class LRUCache {
   int capacity;
 
   /**
-   * Constructs an LRUCache with the specified capacity.
+   * Constructs an Snowflake.LRUCache with the specified capacity.
    *
    * @param capacity The maximum number of key-value pairs that the cache can
    *     hold.
@@ -97,6 +99,14 @@ public class LRUCache {
     return tail;
   }
 
+  public void resize(int newCapacity) {
+    this.capacity = newCapacity;
+    while (map.size() > newCapacity) {
+      Node nodeToRemove = removeTail();
+      map.remove(nodeToRemove.key);  // Remove key from the map as well
+    }
+  }
+
   public static void main(String[] args) {
     int capacity = 2;
     LRUCache lRUCache = new LRUCache(capacity);
@@ -108,6 +118,11 @@ public class LRUCache {
     lRUCache.put(4, 4); // LRU key was 1, evicts key 1, cache is {4=4, 3=3}
     System.out.println(lRUCache.get(1)); // return -1 (not found)
     System.out.println(lRUCache.get(3)); // return 3
+    System.out.println(lRUCache.get(4)); // return 4
+
+    // Resizing the cache
+    lRUCache.resize(1);  // Resize the cache to capacity 1
+    System.out.println(lRUCache.get(3)); // return -1 (LRU key 3 was evicted)
     System.out.println(lRUCache.get(4)); // return 4
   }
 }
