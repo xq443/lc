@@ -1,54 +1,49 @@
 package Snowflake.graph;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class ParallelCoursesIIIDFS {
-  public int minimumTime(int n, int[][] relations, int[] time) {
-    List<List<Integer>> adj = new ArrayList<>();
-    for(int i = 0; i <= n; i++) {
-      adj.add(new ArrayList<>());
+    public int minimumTime(int n, int[][] relations, int[] time) {
+        List<List<Integer>> adj = new ArrayList<>(); // TC: O(E) SC: O(V + E)
+        int[] memo = new int[n + 1];
+        boolean[] visited = new boolean[n + 1];
+
+        for(int i = 0; i <= n; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        for(int[] relation : relations) {
+            int pre = relation[0];
+            int post = relation[1];
+            adj.get(pre).add(post);
+        }
+
+        int ret = 0;
+        for(int i = 1; i <= n; i++) {
+            ret = Math.max(ret, dfs(i, visited, memo, time, adj));
+        }
+        return ret;
     }
-    boolean[] visited = new boolean[n + 1];
-    int[] memo = new int[n + 1];
 
-    for(int[] relation : relations) {
-      int prep = relation[0];
-      int course = relation[1];
-      adj.get(prep).add(course);
+    public int dfs(int node, boolean[] visited, int[] totalTime, int[] time,  List<List<Integer>> adj) {
+        // TC: O(V + E)
+        // SC: O(V)
+        if(visited[node]) return totalTime[node];
+        visited[node] = true;
+
+        int ret = time[node - 1]; // init max
+        for(int next: adj.get(node)) {
+            ret = Math.max(ret, time[node - 1] + dfs(next, visited, totalTime, time, adj));
+        }
+        totalTime[node] = ret;
+        return ret;
     }
 
-    int ret = 0;
-    for(int i = 1; i <= n; i++) {
-      ret = Math.max(ret, dfs(i, adj, time, memo, visited));
+    public static void main(String[] args) {
+        ParallelCoursesIIIDFS pc = new ParallelCoursesIIIDFS();
+        System.out.println(pc.minimumTime(3, new int[][]{{1,3},{2,3}}, new int[]{3,2,5}));
     }
-    return ret;
-  }
-
-  public int dfs(int i, List<List<Integer>> adj, int[] time, int[] memo, boolean[] visited) {
-    if(visited[i]) return memo[i];
-    // base case
-    int max = time[i - 1]; // Minimum time required is its own duration
-
-    for(int next : adj.get(i)) {
-      max = Math.max(max, time[i - 1] + dfs(next, adj, time, memo, visited));
-    }
-    visited[i] = true;
-    memo[i] = max;
-    return max;
-  }
-
-  /**
-   * In the worst case, we traverse every node (O(V)) and visit all edges (O(E)) once.
-   * Since we use memoization, each course is only computed once.
-   * The recursion explores all dependencies efficiently without redundant computation.
-   * This results in an overall complexity of O(V + E).
-   * @param args
-   */
-
-  public static void main(String[] args) {
-    ParallelCoursesIIIDFS p = new ParallelCoursesIIIDFS();
-    int[][] relations = new int[][]{{1,3}, {2,3}};
-    System.out.println(p.minimumTime(3, relations, new int[]{2,3,5}));
-  }
 }
