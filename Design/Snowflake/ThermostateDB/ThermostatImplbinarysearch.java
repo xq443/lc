@@ -1,13 +1,13 @@
-package Snowflake;
+package Snowflake.ThermostateDB;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ThermostatImpl implements Thermostat {
+public class ThermostatImplbinarysearch implements Thermostatbinarysearch {
     List<Entry> entries;
 
-    public ThermostatImpl() {
+    public ThermostatImplbinarysearch() {
         this.entries = new ArrayList<>();
     }
 
@@ -92,7 +92,7 @@ public class ThermostatImpl implements Thermostat {
 
     public static void main(String[] args) {
         try {
-            ThermostatImpl thermostatDB = new ThermostatImpl();
+            ThermostatImplbinarysearch thermostatDB = new ThermostatImplbinarysearch();
 
             // Adding some temperature data
             thermostatDB.addTemperature(LocalDateTime.of(2025, 3, 6, 10, 0, 0), 22.5);
