@@ -61,7 +61,8 @@ public class RateLimiter3 {
 
         // Increment atomic counters for requests in the last second and last 10 seconds
         requestsInLastSecond.incrementAndGet();
-        requestsInLastTenSeconds.incrementAndGet();
+        requestsInLastTenSeconds.incrementAndGet(); // perform operations atomically,
+        // meaning they handle multiple threads attempting to modify the same integer at the same time.
 
         return true;  // Allow request
     }

@@ -32,7 +32,7 @@ public class RateLimiter {
 
         // Remove requests older than 1 second for per-second rate limit
         while (!requestsPerSecond.isEmpty() && currentTime - requestsPerSecond.peek() >= secondWindow) {
-            requestsPerSecond.poll();
+            requestsPerSecond.poll(); // remove the first element
         }
 
         // Remove requests older than 10 seconds for per-10-seconds rate limit
@@ -51,7 +51,7 @@ public class RateLimiter {
         }
 
         // Record the request in both windows
-        requestsPerSecond.add(currentTime);
+        requestsPerSecond.add(currentTime); // add to the last position
         requestsPerTenSeconds.add(currentTime);
 
         return true;  // Allow request
