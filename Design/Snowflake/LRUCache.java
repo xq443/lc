@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LRUCache {
+  // The map stores references to the nodes in the linked list
+  // enables the efficient retrieval and eviction of cache items
 
   /**
    * Inner class representing a node in the doubly linked list used for the
