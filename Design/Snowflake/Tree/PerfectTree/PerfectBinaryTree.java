@@ -1,4 +1,4 @@
-package Snowflake.Tree;
+package Snowflake.Tree.PerfectTree;
 
 import java.util.*;
 
