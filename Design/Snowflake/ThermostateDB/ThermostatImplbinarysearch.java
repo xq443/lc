@@ -152,9 +152,11 @@ public class ThermostatImplbinarysearch implements Thermostatbinarysearch {
     // Adding an entry:
     // Time Complexity: O(N log N) (due to sorting)
     // Space Complexity: O(N) (for the list of entries)
+
     // Finding a specific timestamp:
     // Time Complexity: O(log N)
     // Space Complexity: O(1)
+
     // In-range search:
     // Time Complexity: O(log N + M) (binary search for the range + iterating through the range of elements)
     // Space Complexity: O(M) (for storing the range results)
