@@ -1,4 +1,4 @@
-package Snowflake;
+package Snowflake.ThermostateDB;
 
 import java.time.LocalDateTime;
 
