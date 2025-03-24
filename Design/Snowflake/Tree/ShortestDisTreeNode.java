@@ -1,4 +1,4 @@
-package Snowflake.tree;
+package Snowflake.Tree;
 
 public class ShortestDisTreeNode {
   // TreeNode class to represent each node of the tree

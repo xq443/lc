@@ -1,10 +1,8 @@
-package Snowflake.tree.view;
+package Snowflake.Tree.view;
 
-import Snowflake.tree.UpdateTreeSum.UpdateTree;
-import Snowflake.tree.UpdateTreeSum.UpdateTree.TreeNode;
 import java.util.*;
 
-public class TopViewBinaryTree {
+public class BottomViewBinaryTree {
     public static class TreeNode {
         int val;
         TreeNode left;
@@ -37,8 +35,8 @@ public class TopViewBinaryTree {
             for (int i = 0; i < size; i++) {
                 TreeNode node = q.poll();
                 int currIdx = idx.poll();
+                map.put(currIdx, node.val);  // Record the bottom-most node for the current vertical level
 
-                if(!map.containsKey(currIdx)) map.put(currIdx, node.val);  // Record the bottom-most node for the current vertical level
                 // Add left and right children to the queue and update their indices
                 if (node.left != null) {
                     q.add(node.left);
@@ -71,14 +69,14 @@ public class TopViewBinaryTree {
 
     // Helper method to create the binary tree and test the bottom view
     public static void main(String[] args) {
-        TopViewBinaryTree b = new TopViewBinaryTree();
+        BottomViewBinaryTree b = new BottomViewBinaryTree();
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
         root.left.left = new TreeNode(4);
         root.left.right = new TreeNode(6);
 
-        List<Integer> top = b.bottomView(root);
-        System.out.println("Bottom view of the binary tree: " + top);
+        List<Integer> bottomView = b.bottomView(root);
+        System.out.println("Bottom view of the binary tree: " + bottomView);
     }
 }

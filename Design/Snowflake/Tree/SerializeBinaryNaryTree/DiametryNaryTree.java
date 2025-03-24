@@ -1,4 +1,4 @@
-package Snowflake.tree.SerializeBinaryNaryTree;
+package Snowflake.Tree.SerializeBinaryNaryTree;
 
 import java.util.ArrayList;
 import java.util.List;

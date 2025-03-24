@@ -1,4 +1,4 @@
-package Snowflake.tree.view;
+package Snowflake.Tree.view;
 
 import java.util.*;
 

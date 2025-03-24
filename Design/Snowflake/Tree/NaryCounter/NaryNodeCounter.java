@@ -1,6 +1,5 @@
-package Snowflake.tree.NaryCounter;
+package Snowflake.Tree.NaryCounter;
 
-import Snowflake.tree.NaryCounter.Node.Msg;
 import java.util.*;
 
 // Node class representing a node in the distributed system

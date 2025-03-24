@@ -1,4 +1,4 @@
-package Snowflake.tree.NaryCounter;
+package Snowflake.Tree.NaryCounter;
 
 import java.util.ArrayList;
 import java.util.List;

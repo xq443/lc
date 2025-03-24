@@ -1,4 +1,4 @@
-package Snowflake.tree.LeafSimiliar;
+package Snowflake.Tree.LeafSimiliar;
 
 import java.util.ArrayList;
 import java.util.List;

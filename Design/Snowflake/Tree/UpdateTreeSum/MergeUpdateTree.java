@@ -1,4 +1,4 @@
-package Snowflake.tree.UpdateTreeSum;
+package Snowflake.Tree.UpdateTreeSum;
 
 public class MergeUpdateTree {
   public static class TreeNode {

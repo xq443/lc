@@ -1,4 +1,4 @@
-package Snowflake.tree.SerializeBinaryNaryTree;
+package Snowflake.Tree.SerializeBinaryNaryTree;
 
 public class TreeNode {
   int val;
