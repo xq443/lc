@@ -1,0 +1,3 @@
+hello john.doe@example.com
+contact us at support@company.org, thanks.
+invalid emails: @bad.com, test@, user@@example.com
