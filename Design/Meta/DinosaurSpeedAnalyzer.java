@@ -1,6 +1,5 @@
 package Meta;
 
-import Meta.Dinosaurs.Dino;
 import java.io.*;
 import java.util.*;
 
