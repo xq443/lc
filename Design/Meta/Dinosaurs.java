@@ -18,7 +18,7 @@ public class Dinosaurs {
   }
 
   public float computeSpeed(float strideLength, float legLength) {
-    return (strideLength / legLength - 1) * (float)Math.sqrt(legLength * 9.8);
+    return (strideLength / legLength - 1) * (float) Math.sqrt(legLength * 9.8);
   }
 
   public List<String> getFastestBipeds(List<String> dataset1, List<String> dataset2) {
@@ -42,6 +42,9 @@ public class Dinosaurs {
     }
 
     bipedalDinos.sort((a, b) -> Float.compare(b.speed, a.speed));
+    for(Dino d : bipedalDinos) {
+      System.out.println(d.speed);
+    }
     List<String> ret = new ArrayList<>();
     for(Dino d : bipedalDinos) {
       ret.add(d.name);
@@ -82,3 +85,6 @@ public class Dinosaurs {
 
 // TC: O(n + m + p* logp)
 // SC: O(n + p)
+//Struthiomimus
+//    Hadrosaurus
+//Tyrannosaurus Rex
