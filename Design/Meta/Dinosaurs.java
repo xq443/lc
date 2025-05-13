@@ -22,7 +22,7 @@ public class Dinosaurs {
   }
 
   public List<String> getFastestBipeds(List<String> dataset1, List<String> dataset2) {
-    Map<String, Float> legLength = new HashMap<>();
+    Map<String, Float> legLength = new HashMap<>(); // name to legLength mapping
     for(int i = 1; i < dataset1.size(); i++) {
       String[] parts = dataset1.get(i).split(",");
       legLength.put(parts[0], Float.parseFloat(parts[1]));
