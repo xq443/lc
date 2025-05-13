@@ -13,16 +13,15 @@ class FindSplitPoint {
     // of whole array
     int leftSum = 0;
 
-    for (int i = 0 ; i < n ; i++)
+    for (int i = 0 ; i < n ; i++) {
       leftSum += arr[i];
-
+    }
     // again traverse array and compute right
     // sum and also check left_sum equal to
     // right sum or not
     int rightSum = 0;
 
-    for (int i = n-1; i >= 0; i--)
-    {
+    for (int i = n-1; i >= 0; i--) {
       // add current element to right_sum
       rightSum += arr[i];
 
@@ -40,17 +39,14 @@ class FindSplitPoint {
 
   // Prints two parts after finding split
   // point using findSplitPoint()
-  public void printTwoParts(int[] arr, int n)
-  {
+  public void printTwoParts(int[] arr, int n) {
     int splitPoint = findSplitPoint(arr, n);
 
-    if (splitPoint == -1 || splitPoint == n )
-    {
+    if (splitPoint == -1 || splitPoint == n ) {
       System.out.println("Not Possible" );
       return;
     }
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
       if(splitPoint == i)
         System.out.println();
 
