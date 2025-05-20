@@ -41,4 +41,8 @@ public class AddBoldTagInString {
     String[] words1 = new String[]{"aa","b"};
     System.out.println(a.addBoldTag(s1, words1));
   }
+  // TC: O(M * N)
+  // SC: O(N)
+  // n = length of string s
+  // m = number of words in dict
 }
