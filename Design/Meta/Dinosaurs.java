@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Dinosaurs {
+  public static final float G = 9.8F;
   public static class Dino {
     String name;
     float speed;
@@ -18,7 +19,7 @@ public class Dinosaurs {
   }
 
   public float computeSpeed(float strideLength, float legLength) {
-    return (strideLength / legLength - 1) * (float) Math.sqrt(legLength * 9.8);
+    return (strideLength / legLength - 1) * (float) Math.sqrt(legLength * G);
   }
 
   public List<String> getFastestBipeds(List<String> dataset1, List<String> dataset2) {
