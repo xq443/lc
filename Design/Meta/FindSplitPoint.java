@@ -56,10 +56,8 @@ class FindSplitPoint {
 
   public static void main (String[] args) {
     FindSplitPoint f = new FindSplitPoint();
-
     int[] arr = {1 , 2 , 3 , 4 , 5 , 5 };
     int n = arr.length;
-
     f.printTwoParts(arr, n);
   }
 }
