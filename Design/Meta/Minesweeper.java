@@ -56,8 +56,6 @@ public class Minesweeper {
     }
 
     System.out.println("the number of mines are: ");
-
-
     fillMineCounts(board);
 
     for (int[] row : board) {
